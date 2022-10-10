@@ -8,7 +8,6 @@ newLine = "\n\n-----------------------------------------------------------------
 data = np.array(data[['Age', 'DailyRate', 'Education', 'HourlyRate', 'JobLevel', 'MonthlyRate', 'PercentSalaryHike']].values)
 print("Data = ")
 print(data, end = newLine)
-# print("\n-------------------------------------------------------------------------\n")
 dt_Train, dt_Test = model_selection.train_test_split(data, test_size=0.3, shuffle=False)
 
 x_test, y_test = dt_Test[:,:-1], dt_Test[:,-1:]
