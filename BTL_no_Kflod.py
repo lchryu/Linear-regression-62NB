@@ -6,7 +6,7 @@ import numpy as np
 import os
 os.system("cls")
 # ------------------------------------------------------------------
-df = pd.read_csv('WA_Fn-UseC_-HR-Employee-Attrition (1).csv')
+df = pd.read_csv('WA_Fn-UseC_-HR-Employee-Attrition.csv')
 data = np.array(df[['Age', 'DailyRate', 'Education', 'HourlyRate', 'JobLevel', 'MonthlyRate', 'PercentSalaryHike']].values)
 #chia mô hình thành 2 tập dữ liệu: 70% cho tập train, 30% cho tập test
 dt_Train, dt_Test = train_test_split(data, test_size=0.3, shuffle=False)
