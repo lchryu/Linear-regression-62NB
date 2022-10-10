@@ -1,12 +1,14 @@
 from sklearn import metrics, linear_model, model_selection
 import numpy as np
 import pandas as pd
-
+import os
+os.system("cls")
 data = pd.read_csv('data.csv')
 
 data = np.array(data[['Age', 'DailyRate', 'Education', 'HourlyRate', 'JobLevel', 'MonthlyRate', 'PercentSalaryHike']].values)
+print("Data = ")
 print(data)
-
+print("\n-------------------------------------------------------------------------\n")
 dt_Train, dt_Test = model_selection.train_test_split(data, test_size=0.3, shuffle=False)
 
 x_test, y_test = dt_Test[:,:-1], dt_Test[:,-1:]
@@ -35,8 +37,13 @@ for i, j in kfold.split(dt_Train):
         reg = regr
         
 print("W = ", reg.coef_)
+print("\n-------------------------------------------------------------------------\n")
+
 print("W0 = ", reg.intercept_)
+print("\n-------------------------------------------------------------------------\n")
 
 data_pred = reg.predict(x_test)
 
-print("^^: ", reg.score(x_test, y_test))
+print("reg.socre: ", reg.score(x_test, y_test))
+
+print("\n-------------------------------------------------------------------------\n")
